@@ -8,8 +8,9 @@ function runcollection(callback){
    },function(error, summary){
       callback(summary)
    })
+   // if you want to modify any request you can do using below code
    // .on('beforeRequest', function(err, req){
-   //    if(req.request.url.path[4] === 'voucher_creation'){
+   //    if(req.request.url.path[4] === 'name of the request to be modify'){
    //       const jbody = req.request.body.raw;
    //       const arrybody= JSON.parse(jbody);
    //       arrybody.actor.id = 45878
