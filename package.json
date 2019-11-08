@@ -1,0 +1,25 @@
+{
+  "name": "postmannodejs",
+  "version": "1.0.0",
+  "description": "PostmanAndNodeJS",
+  "main": "index.js",
+  "types": "module",
+  "scripts": {
+    "test": "mocha --exec babel-node test.js"
+  },
+  "author": "Nandkumar Ghatge",
+  "license": "ISC",
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "mocha": "^6.2.2",
+    "newman": "^4.5.5",
+    "pretty": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "nodemon": "^1.19.4"
+  }
+}
