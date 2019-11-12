@@ -9,19 +9,15 @@ function runcollection(callback){
    },function(error, summary){
       callback(summary);
    })
-   // .on('beforeRequest', function(err, req){
-   //    if(req.request.url.path[4] === 'voucher_creation'){
-   //       const jbody = req.request.body.raw;
-   //       const arrybody= JSON.parse(jbody);
-   //       arrybody.actor.id = 45878
-   //       req.request.body.raw = JSON.stringify(arrybody);
-   //    }
-   // })
+   .on('beforeRequest', function(err, req){
+      if(req.request.url.path[4] === 'voucher_creation'){
+         const jbody = req.request.body.raw;
+         const arrybody= JSON.parse(jbody);
+         arrybody.actor.id = 45878
+         req.request.body.raw = JSON.stringify(arrybody);
+      }
+   })
 }
-
-before(function(){
-
-});
 
 describe('newman', function () {
     var res = new Array();
@@ -29,7 +25,6 @@ describe('newman', function () {
    it('Generate voucher with 200 response', function (done) {
       runcollection(function(result){
          x = result.run.executions[0].response.stream.toString();
-        //console.log(result)
         handleData(x)
         done();
      });
